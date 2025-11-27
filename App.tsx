@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import BookingWidget from './components/BookingWidget';
 import ConciergeWidget from './components/GeminiConcierge';
 import FleetCarousel from './components/FleetCarousel';
+import Reviews from './components/Reviews';
 import { SERVICES, FLEET, FEATURES } from './constants';
 import { Shield, Star, Map, CheckCircle, ArrowRight } from 'lucide-react';
 
@@ -71,7 +72,7 @@ const App: React.FC = () => {
             <div className="lg:w-1/2 relative">
                <div className="relative z-10 transform lg:translate-x-10 lg:scale-110">
                   <img 
-                    src="/posts-petstar-1-1-1.webp" 
+                    src="./posts-petstar-1-1-1.webp" 
                     alt="Luxury Cadillac Escalade" 
                     className="w-full h-auto drop-shadow-2xl"
                   />
@@ -145,7 +146,7 @@ const App: React.FC = () => {
                 <div className="relative order-2 lg:order-1 max-w-md mx-auto lg:max-w-none">
                      <div className="relative rounded-sm overflow-hidden border border-white/5 shadow-2xl">
                          <img 
-                            src="/Why Choose Us.png" 
+                            src="./Why Choose Us.png" 
                             className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500" 
                             alt="Chauffeur opening door"
                          />
@@ -186,6 +187,9 @@ const App: React.FC = () => {
         </div>
       </section>
 
+      {/* Reviews Section */}
+      <Reviews />
+
       {/* Story / About Section */}
       <section id="about" className="py-24 bg-black relative">
          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
@@ -217,7 +221,7 @@ const App: React.FC = () => {
                 <div className="relative max-w-md mx-auto lg:max-w-none">
                     <div className="relative z-10 p-2 border border-white/10 bg-dark-800/50 backdrop-blur-sm">
                         <img 
-                            src="/Rectangle-28-1.webp" 
+                            src="./Rectangle-28-1.webp" 
                             alt="Chauffeur opening car door" 
                             className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
                         />
@@ -255,7 +259,7 @@ const App: React.FC = () => {
                    <div className="relative order-1 max-w-md mx-auto lg:max-w-none">
                        <div className="relative z-10">
                            <img 
-                             src="/Talk to us.webp" 
+                             src="./Talk to us.webp" 
                              alt="Concierge Team" 
                              className="w-full h-auto object-contain drop-shadow-2xl opacity-90 hover:opacity-100 transition-opacity duration-500 transform hover:scale-105 transition-transform"
                            />
@@ -287,11 +291,26 @@ const App: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
                  <div className="flex items-center gap-3">
                     <img 
-                      src="/pls-vip-limo-1-1.webp" 
+                      src="./pls-vip-limo-1-1.webp" 
                       alt="PLS VIP Limo" 
                       className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
                     />
                 </div>
+
+                {/* Google Rating in Footer */}
+                <a 
+                  href="https://share.google/WyRHsaMrefBXLfz8S" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 group"
+                >
+                  <div className="flex gap-0.5">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} size={14} className="text-gold-400 fill-gold-400" />
+                    ))}
+                  </div>
+                  <span className="text-white text-sm group-hover:text-gold-400 transition-colors">5.0 on Google</span>
+                </a>
                 
                 <div className="flex flex-col md:flex-row gap-8 text-center md:text-right">
                     <div className="space-y-1">

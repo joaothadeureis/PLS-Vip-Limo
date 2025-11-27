@@ -5,25 +5,25 @@ export const SERVICES: Service[] = [
     id: 'city-tour',
     title: 'City Tour Services',
     description: 'Explore the Bay Area like never before. Our chauffeurs — long-time residents who know every landmark and hidden gem — guide you through scenic viewpoints, cultural attractions, and iconic locations, giving you an unforgettable and personalized tour.',
-    image: '/CITY TOUR SERVICES.webp'
+    image: './CITY TOUR SERVICES.webp'
   },
   {
     id: 'airport',
     title: 'Airport Transfers',
     description: 'Navigating airport logistics can be stressful — we make it seamless. Our airport transfer service guarantees on-time pickups and drop-offs, with real-time flight tracking to accommodate schedule changes. Whether arriving or departing, your ride will always be waiting.',
-    image: '/AIRPORT TRANSFERS.webp'
+    image: './AIRPORT TRANSFERS.webp'
   },
   {
     id: 'corporate',
     title: 'Corporate Transportation',
     description: 'Impress clients and maintain productivity on the move. Our corporate transportation service provides a refined, quiet, and comfortable environment — ideal for preparing for meetings, relaxing between engagements, or transporting executives with professionalism.',
-    image: '/CORPORATE TRANSPORTATION.webp'
+    image: './CORPORATE TRANSPORTATION.webp'
   },
   {
     id: 'wedding',
     title: 'Wedding Services',
     description: 'Make every celebration extraordinary. From weddings and proms to concerts and sporting events, our luxury transportation adds elegance and ensures you arrive with style and comfort.',
-    image: '/WEDDING SERVICES.webp'
+    image: './WEDDING SERVICES.webp'
   }
 ];
 
@@ -34,7 +34,7 @@ export const FLEET: Vehicle[] = [
     category: 'Luxury Sedan',
     capacity: { passengers: 3, luggage: 3 },
     description: 'Seats: 3 | Minimum 3 Hrs',
-    image: '/CADILLAC XTS.webp'
+    image: './CADILLAC XTS.webp'
   },
   {
     id: 's550',
@@ -42,7 +42,7 @@ export const FLEET: Vehicle[] = [
     category: 'Luxury Sedan',
     capacity: { passengers: 3, luggage: 3 },
     description: 'Seats: 3 | Minimum 3 Hrs',
-    image: '/MERCEDES-S-550.webp'
+    image: './MERCEDES-S-550.webp'
   },
   {
     id: 'suburban',
@@ -50,7 +50,7 @@ export const FLEET: Vehicle[] = [
     category: 'SUV',
     capacity: { passengers: 6, luggage: 6 },
     description: 'Seats: 6 | Minimum 3 Hrs',
-    image: '/CHEVROLET-SUBURBAN-preto.webp'
+    image: './CHEVROLET-SUBURBAN-preto.webp'
   },
   {
     id: 'escalade',
@@ -58,7 +58,7 @@ export const FLEET: Vehicle[] = [
     category: 'Premium SUV',
     capacity: { passengers: 6, luggage: 6 },
     description: 'Seats: 6 | Minimum 6 Hrs',
-    image: '/Cadillac-Escalade-Preta_diant.-dir (1).webp'
+    image: './Cadillac-Escalade-Preta_diant.-dir (1).webp'
   },
   {
     id: 'tesla',
@@ -66,7 +66,7 @@ export const FLEET: Vehicle[] = [
     category: 'Electric Luxury',
     capacity: { passengers: 4, luggage: 3 },
     description: 'Seats: 4 | Minimum 4 Hrs',
-    image: '/tesla model s.webp'
+    image: './tesla model s.webp'
   },
   {
     id: 'sprinter',
@@ -74,7 +74,7 @@ export const FLEET: Vehicle[] = [
     category: 'Van',
     capacity: { passengers: 14, luggage: 14 },
     description: 'Seats: 14 | Minimum 3 Hrs',
-    image: '/MERCEDES-BENZ SPRINTER.webp'
+    image: './MERCEDES-BENZ SPRINTER.webp'
   },
   {
     id: 'partybus',
@@ -82,7 +82,7 @@ export const FLEET: Vehicle[] = [
     category: 'Bus',
     capacity: { passengers: 30, luggage: 10 },
     description: 'Seats: 30 | Minimum 3 Hrs',
-    image: '/PARTY-BUS.webp'
+    image: './PARTY-BUS.webp'
   },
   {
     id: 'shuttlebus',
@@ -90,7 +90,7 @@ export const FLEET: Vehicle[] = [
     category: 'Bus',
     capacity: { passengers: 36, luggage: 36 },
     description: 'Seats: 36 | Minimum 3 Hrs',
-    image: '/8-Shuttle-Bus (1).webp'
+    image: './8-Shuttle-Bus (1).webp'
   },
   {
     id: 'motorcoach',
@@ -98,7 +98,7 @@ export const FLEET: Vehicle[] = [
     category: 'Coach',
     capacity: { passengers: 55, luggage: 55 },
     description: 'Seats: 55 | Minimum 3 Hrs',
-    image: '/MOTOR COACH.webp'
+    image: './MOTOR COACH.webp'
   }
 ];
 
