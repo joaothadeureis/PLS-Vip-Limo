@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div className="flex items-center gap-3">
               <img 
-                src="https://lp.plsviplimo.com/wp-content/uploads/2025/11/pls-vip-limo-1-1.webp" 
+                src="./assets/logo pls-vip-limo-1-1.webp" 
                 alt="PLS VIP Limo" 
                 className="h-10 w-auto object-contain"
               />
