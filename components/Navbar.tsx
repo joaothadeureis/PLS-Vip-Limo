@@ -22,8 +22,8 @@ const Navbar: React.FC = () => {
                 <span className="flex items-center gap-2"><MapPin size={10} className="text-gold-400" /> San Francisco and Surrounding Areas</span>
             </div>
             <div className="flex items-center gap-6">
-                <span className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><Phone size={10} className="text-gold-400" /> +1 (415) 870-1333</span>
-                <span className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><Phone size={10} className="text-gold-400" /> +1 (415) 548-8535</span>
+                <a href="tel:+14158701333" className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><Phone size={10} className="text-gold-400" /> +1 (415) 870-1333</a>
+                <a href="tel:+14155488535" className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><Phone size={10} className="text-gold-400" /> +1 (415) 548-8535</a>
             </div>
         </div>
       </div>

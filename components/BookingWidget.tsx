@@ -32,7 +32,7 @@ const BookingWidget: React.FC = () => {
                 href="https://book.mylimobiz.com/v4/plslimo" 
                 data-ores-widget="website" 
                 data-ores-alias="plslimo"
-                className="hidden" // The script usually replaces this or appends, hiding default just in case until loaded
+                className="hidden"
              >
                 Online Reservations
              </a>
@@ -40,8 +40,7 @@ const BookingWidget: React.FC = () => {
       </div>
       
       <style>{`
-        /* Overrides to ensure the widget blends with our dark/luxury theme if iframe allows transparent bg */
-        iframe[data-ores-widget] {
+        iframe[data-ores-widget], iframe[src*="mylimobiz"] {
             width: 100% !important;
             min-height: 450px;
             border: none;

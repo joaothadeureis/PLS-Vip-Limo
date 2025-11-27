@@ -1,7 +1,22 @@
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #050505;
   color: #f3f4f6;
 }
+
+/* Premium custom cursor */
+* {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23D4AF37' d='M5.5 3.21V20.8l4.86-4.86h8.14L5.5 3.21z'/%3E%3Cpath fill='%23050505' stroke='%23D4AF37' stroke-width='1' d='M6.5 5.21V18.8l3.86-3.86h6.14L6.5 5.21z'/%3E%3C/svg%3E"), auto;
+}
+
+a, button, [role="button"], input[type="submit"], .cursor-pointer {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23F3E5AB' d='M5.5 3.21V20.8l4.86-4.86h8.14L5.5 3.21z'/%3E%3Cpath fill='%23D4AF37' stroke='%23F3E5AB' stroke-width='1' d='M6.5 5.21V18.8l3.86-3.86h6.14L6.5 5.21z'/%3E%3C/svg%3E"), pointer;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
 }

@@ -42,7 +42,7 @@ export const FLEET: Vehicle[] = [
     category: 'Luxury Sedan',
     capacity: { passengers: 3, luggage: 3 },
     description: 'Seats: 3 | Minimum 3 Hrs',
-    image: 'https://lp.plsviplimo.com/wp-content/uploads/2025/11/Image_1_1.png'
+    image: 'https://lp.plsviplimo.com/wp-content/uploads/2025/11/MERCEDES-S-550.webp'
   },
   {
     id: 'suburban',
@@ -50,7 +50,7 @@ export const FLEET: Vehicle[] = [
     category: 'SUV',
     capacity: { passengers: 6, luggage: 6 },
     description: 'Seats: 6 | Minimum 3 Hrs',
-    image: 'https://lp.plsviplimo.com/wp-content/uploads/2025/11/Image_1_1-1.png'
+    image: 'https://lp.plsviplimo.com/wp-content/uploads/2025/11/CHEVROLET-SUBURBAN-preto.webp'
   },
   {
     id: 'escalade',
@@ -58,7 +58,7 @@ export const FLEET: Vehicle[] = [
     category: 'Premium SUV',
     capacity: { passengers: 6, luggage: 6 },
     description: 'Seats: 6 | Minimum 6 Hrs',
-    image: 'https://lp.plsviplimo.com/wp-content/uploads/2025/11/Image_1_1-1.png'
+    image: 'https://lp.plsviplimo.com/wp-content/uploads/2025/11/Cadillac-Escalade-Preta_diant.-dir.webp'
   },
   {
     id: 'tesla',
@@ -82,7 +82,7 @@ export const FLEET: Vehicle[] = [
     category: 'Bus',
     capacity: { passengers: 30, luggage: 10 },
     description: 'Seats: 30 | Minimum 3 Hrs',
-    image: 'https://lp.plsviplimo.com/wp-content/uploads/2025/11/f173609d-22c4-42c2-8df1-3e04d77d1b7f.webp'
+    image: 'https://lp.plsviplimo.com/wp-content/uploads/2025/11/PARTY-BUS.webp'
   },
   {
     id: 'shuttlebus',
@@ -90,7 +90,7 @@ export const FLEET: Vehicle[] = [
     category: 'Bus',
     capacity: { passengers: 36, luggage: 36 },
     description: 'Seats: 36 | Minimum 3 Hrs',
-    image: 'https://lp.plsviplimo.com/wp-content/uploads/2025/11/5f492808-a5d0-4f5e-8a02-b44f99fb14e4.webp'
+    image: 'https://lp.plsviplimo.com/wp-content/uploads/2025/11/8-Shuttle-Bus.webp'
   },
   {
     id: 'motorcoach',
