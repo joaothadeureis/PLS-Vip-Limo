@@ -71,7 +71,7 @@ const App: React.FC = () => {
             <div className="lg:w-1/2 relative">
                <div className="relative z-10 transform lg:translate-x-10 lg:scale-110">
                   <img 
-                    src="./assets/img hero.webp" 
+                    src="/posts-petstar-1-1-1.webp" 
                     alt="Luxury Cadillac Escalade" 
                     className="w-full h-auto drop-shadow-2xl"
                   />
@@ -145,7 +145,7 @@ const App: React.FC = () => {
                 <div className="relative order-2 lg:order-1 max-w-md mx-auto lg:max-w-none">
                      <div className="relative rounded-sm overflow-hidden border border-white/5 shadow-2xl">
                          <img 
-                            src="./assets/Why Choose Us.webp" 
+                            src="/Why Choose Us.png" 
                             className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500" 
                             alt="Chauffeur opening door"
                          />
@@ -217,7 +217,7 @@ const App: React.FC = () => {
                 <div className="relative max-w-md mx-auto lg:max-w-none">
                     <div className="relative z-10 p-2 border border-white/10 bg-dark-800/50 backdrop-blur-sm">
                         <img 
-                            src="./assets/Our Story.webp" 
+                            src="/Rectangle-28-1.webp" 
                             alt="Chauffeur opening car door" 
                             className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
                         />
@@ -255,7 +255,7 @@ const App: React.FC = () => {
                    <div className="relative order-1 max-w-md mx-auto lg:max-w-none">
                        <div className="relative z-10">
                            <img 
-                             src="./assets/Talk to us.webp" 
+                             src="/Talk to us.webp" 
                              alt="Concierge Team" 
                              className="w-full h-auto object-contain drop-shadow-2xl opacity-90 hover:opacity-100 transition-opacity duration-500 transform hover:scale-105 transition-transform"
                            />
@@ -287,7 +287,7 @@ const App: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
                  <div className="flex items-center gap-3">
                     <img 
-                      src="./assets/logo pls-vip-limo-1-1.webp" 
+                      src="/pls-vip-limo-1-1.webp" 
                       alt="PLS VIP Limo" 
                       className="h-8 w-auto opacity-80 hover:opacity-100 transition-opacity"
                     />
