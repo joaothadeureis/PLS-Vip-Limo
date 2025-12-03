@@ -222,15 +222,15 @@ try {
       <style>
         body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
         .container { max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; }
-        .header { background-color: #1a1a1a; color: #D4AF37; padding: 20px; text-align: center; }
-        .header h2 { margin: 0; color: #D4AF37; }
+        .header { background-color: #1a1a1a; color: #928454; padding: 20px; text-align: center; }
+        .header h2 { margin: 0; color: #928454; }
         .content { padding: 20px; background-color: #ffffff; }
         .field { margin-bottom: 12px; border-bottom: 1px solid #f0f0f0; padding-bottom: 8px; }
         .label { font-weight: bold; color: #1a1a1a; display: inline-block; width: 140px; }
         .footer { background-color: #f9f9f9; padding: 10px; text-align: center; font-size: 12px; color: #888; }
-        .highlight { color: #D4AF37; font-weight: bold; }
-        .priority { background: #D4AF37; color: #1a1a1a; padding: 10px; text-align: center; font-weight: bold; }
-        .message-box { background: #f5f5f5; padding: 15px; border-left: 4px solid #D4AF37; margin: 15px 0; }
+        .highlight { color: #928454; font-weight: bold; }
+        .priority { background: #928454; color: #1a1a1a; padding: 10px; text-align: center; font-weight: bold; }
+        .message-box { background: #f5f5f5; padding: 15px; border-left: 4px solid #928454; margin: 15px 0; }
       </style>
     </head>
     <body>

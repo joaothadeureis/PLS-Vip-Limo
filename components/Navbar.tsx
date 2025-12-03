@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
               <img 
                 src="./pls-vip-limo-1-1.webp" 
                 alt="PLS VIP Limo" 
-                className="h-10 w-auto object-contain"
+                className="h-14 w-auto object-contain pb-2"
               />
           </div>
 

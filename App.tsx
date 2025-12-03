@@ -28,7 +28,7 @@ const App: React.FC = () => {
             
             {/* Left Content */}
             <div className="lg:w-1/2 text-center lg:text-left pt-10 lg:pt-0">
-              <div className="inline-block px-4 py-1.5 mb-6 border border-gold-400/30 rounded-full bg-dark-800/50 backdrop-blur-sm">
+              <div className="inline-block px-4 py-1.5 mb-6 mt-8 border border-gold-400/30 rounded-full bg-dark-800/50 backdrop-blur-sm">
                 <span className="text-gold-400 text-xs tracking-[0.2em] uppercase font-bold">Premium Chauffeur Service</span>
               </div>
               
@@ -43,7 +43,7 @@ const App: React.FC = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="#book" className="px-8 py-4 bg-gold-400 text-dark-900 font-bold uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)]">
+                <a href="#book" className="px-8 py-4 bg-gold-400 text-dark-900 font-bold uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(146,132,84,0.3)]">
                     Instant Quote
                 </a>
                 <a href="#fleet" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs hover:border-gold-400 hover:text-gold-400 transition-all duration-300 flex items-center justify-center gap-2 group">
@@ -276,7 +276,7 @@ const App: React.FC = () => {
                             Connect with our concierge team to calculate trip costs instantly and reserve your luxury ride in minutes.
                        </p>
                        
-                       <a href="#book" className="inline-block px-10 py-4 bg-gold-400 text-dark-900 font-bold uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.2)]">
+                       <a href="#book" className="inline-block px-10 py-4 bg-gold-400 text-dark-900 font-bold uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(146,132,84,0.2)]">
                             Instant Quote
                         </a>
                    </div>
