@@ -16,8 +16,20 @@ const App: React.FC = () => {
       {/* Hero Section */}
       {/* Added extra bottom padding (pb-32 lg:pb-48) to prevent the booking widget overlap from cutting off the stats */}
       <header className="relative min-h-[85vh] flex items-center pt-24 pb-32 lg:pb-48 overflow-hidden bg-dark-900">
+        {/* Golden Gate Bridge Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=2532&auto=format&fit=crop" 
+            alt="Golden Gate Bridge - San Francisco Bay Area" 
+            className="w-full h-full object-cover"
+            style={{ filter: 'brightness(0.4)' }}
+          />
+          {/* Overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-dark-900 via-dark-900/70 to-transparent"></div>
+        </div>
+        
         {/* Background Gradients */}
-        <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-l from-dark-800 to-dark-900/0"></div>
+        <div className="absolute top-0 right-0 w-3/4 h-full bg-gradient-to-l from-dark-800/30 to-dark-900/0 z-[1]"></div>
         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-dark-900 to-transparent z-10"></div>
         
         {/* Spotlights */}
@@ -29,25 +41,26 @@ const App: React.FC = () => {
             {/* Left Content */}
             <div className="lg:w-1/2 text-center lg:text-left pt-10 lg:pt-0">
               <div className="inline-block px-4 py-1.5 mb-6 mt-8 border border-gold-400/30 rounded-full bg-dark-800/50 backdrop-blur-sm">
-                <span className="text-gold-400 text-xs tracking-[0.2em] uppercase font-bold">Premium Chauffeur Service</span>
+                <span className="text-gold-400 text-xs tracking-[0.2em] uppercase font-bold">Bay Area's Premium Limo Service</span>
               </div>
               
               <h1 className="text-5xl md:text-7xl font-serif text-white mb-6 leading-[1.1]">
-                Luxury <br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 to-gold-600 italic">Limousine</span> <br/>
-                & VIP Transfers
+                Arrive in <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-300 to-gold-600 italic">Style</span> <br/>
+                Stress-Free
               </h1>
               
               <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed mb-10 max-w-xl mx-auto lg:mx-0">
-                Experience high-end transportation across the Bay Area. Whether for airport transfers, corporate travel, or weddings, PLS VIP Limo ensures a stress-free journey.
+                Professional chauffeurs. On-time, every time. Upfront pricing with no hidden fees. Book your luxury airport transfer, corporate ride, or special event today.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <a href="#book" className="px-8 py-4 bg-gold-400 text-dark-900 font-bold uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(146,132,84,0.3)]">
-                    Instant Quote
+                <a href="tel:+14158701333" className="px-8 py-4 bg-gold-400 text-dark-900 font-bold uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(146,132,84,0.3)] flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    Call Now
                 </a>
-                <a href="#fleet" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs hover:border-gold-400 hover:text-gold-400 transition-all duration-300 flex items-center justify-center gap-2 group">
-                    View All Fleet <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform"/>
+                <a href="#book" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs hover:border-gold-400 hover:text-gold-400 transition-all duration-300 flex items-center justify-center gap-2 group">
+                    Get Instant Quote <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform"/>
                 </a>
               </div>
 
@@ -97,23 +110,23 @@ const App: React.FC = () => {
       <section id="services" className="py-24 bg-dark-900 relative">
         <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-                <span className="text-gold-400 text-xs tracking-[0.2em] uppercase font-bold mb-3 block">Luxury Cars</span>
-                <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">Our Premium Chauffeur Services</h2>
+                <span className="text-gold-400 text-xs tracking-[0.2em] uppercase font-bold mb-3 block">Our Services</span>
+                <h2 className="text-4xl md:text-5xl font-serif text-white mb-6">Experience Luxury Transportation</h2>
                 <p className="text-gray-400 max-w-2xl mx-auto">
-                    Enjoy tailored, high-end transportation throughout the entire Bay Area.
+                    From SFO & Oakland airports to Napa Valley wine tours. Professional drivers, immaculate vehicles, and guaranteed on-time pickup.
                 </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {SERVICES.map((service) => (
-                    <div key={service.id} className="group relative bg-dark-800 border border-white/5 hover:border-gold-400/30 transition-all duration-500 flex flex-col">
-                        <div className="aspect-[4/3] overflow-hidden relative grayscale group-hover:grayscale-0 transition-all duration-500">
+                    <div key={service.id} className="group relative bg-dark-800 border border-white/5 hover:border-gold-400/30 transition-all duration-500 flex flex-col overflow-hidden">
+                        <div className="aspect-[4/3] overflow-hidden relative">
                             <img 
                                 src={service.image} 
                                 alt={service.title} 
                                 className="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-dark-900 to-transparent opacity-80"></div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent"></div>
                         </div>
                         
                         <div className="p-8 flex-grow flex flex-col items-center text-center -mt-12 relative z-10">
@@ -121,7 +134,7 @@ const App: React.FC = () => {
                             <p className="text-gray-400 text-xs leading-relaxed mb-6 flex-grow">
                                 {service.description}
                             </p>
-                            <a href="#book" className="w-full py-3 bg-white/5 hover:bg-gold-400 text-gray-300 hover:text-dark-900 text-[10px] uppercase tracking-widest font-bold transition-all duration-300">
+                            <a href="#book" className="w-full py-3 bg-gold-400/10 hover:bg-gold-400 border border-gold-400/30 text-gold-400 hover:text-dark-900 text-[10px] uppercase tracking-widest font-bold transition-all duration-300">
                                 Instant Quote
                             </a>
                         </div>
@@ -132,10 +145,14 @@ const App: React.FC = () => {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-dark-800 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-b from-dark-800 to-dark-900 relative overflow-hidden">
+        {/* Decorative gold accent */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-gold-400/50 to-transparent"></div>
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gold-400/5 rounded-full blur-3xl"></div>
+        
         <div className="container mx-auto px-6 relative z-10">
              <div className="text-center mb-16">
-                 <div className="inline-block px-3 py-1 mb-4 rounded-full bg-white/5 border border-white/10">
+                 <div className="inline-block px-3 py-1 mb-4 rounded-full bg-gold-400/10 border border-gold-400/20">
                     <span className="text-gold-400 text-[10px] tracking-[0.2em] uppercase font-bold">Why Us?</span>
                  </div>
                 <h2 className="text-4xl md:text-5xl font-serif text-white">Why Choose Us?</h2>
@@ -147,7 +164,7 @@ const App: React.FC = () => {
                      <div className="relative rounded-sm overflow-hidden border border-white/5 shadow-2xl">
                          <img 
                             src="./Why Choose Us.png" 
-                            className="w-full h-auto object-cover opacity-90 hover:opacity-100 transition-opacity duration-500" 
+                            className="w-full h-auto object-cover" 
                             alt="Chauffeur opening door"
                          />
                          <div className="absolute inset-0 bg-gradient-to-tr from-gold-400/20 to-transparent mix-blend-overlay"></div>
@@ -191,14 +208,16 @@ const App: React.FC = () => {
       <Reviews />
 
       {/* Story / About Section */}
-      <section id="about" className="py-24 bg-black relative">
-         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+      <section id="about" className="py-24 bg-gradient-to-b from-black to-dark-900 relative">
+         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-5"></div>
+         <div className="absolute top-1/2 left-0 w-72 h-72 bg-gold-400/10 rounded-full blur-3xl -translate-y-1/2"></div>
+         
          <div className="container mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 
                 {/* Text Content */}
                 <div className="text-center lg:text-left">
-                    <div className="inline-block px-3 py-1 mb-6 rounded-full border border-gold-400/30">
+                    <div className="inline-block px-3 py-1 mb-6 rounded-full border border-gold-400/30 bg-gold-400/5">
                         <span className="text-gold-400 text-[10px] tracking-[0.2em] uppercase font-bold">About Us</span>
                     </div>
                     <h2 className="text-4xl md:text-6xl font-serif text-white mb-8">Our Story</h2>
@@ -219,28 +238,29 @@ const App: React.FC = () => {
 
                 {/* Image */}
                 <div className="relative max-w-md mx-auto lg:max-w-none">
-                    <div className="relative z-10 p-2 border border-white/10 bg-dark-800/50 backdrop-blur-sm">
+                    <div className="relative z-10 p-2 border border-gold-400/20 bg-dark-800/50 backdrop-blur-sm">
                         <img 
                             src="./Rectangle-28-1.webp" 
                             alt="Chauffeur opening car door" 
-                            className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700"
+                            className="w-full h-auto"
                         />
                     </div>
                     {/* Decorative element */}
-                    <div className="absolute -bottom-6 -right-6 w-full h-full border border-gold-400/20 z-0"></div>
+                    <div className="absolute -bottom-6 -right-6 w-full h-full border border-gold-400/30 z-0"></div>
+                    <div className="absolute -top-4 -left-4 w-24 h-24 bg-gold-400/20 rounded-full blur-2xl"></div>
                 </div>
             </div>
          </div>
       </section>
 
       {/* Fleet Showcase */}
-      <section id="fleet" className="py-24 bg-white/5">
+      <section id="fleet" className="py-24 bg-gradient-to-b from-dark-900 to-dark-800">
         <div className="container mx-auto px-6">
             <div className="text-center mb-16">
-                <div className="inline-block px-3 py-1 mb-4 rounded-full bg-dark-900 border border-white/10">
-                    <span className="text-gold-400 text-[10px] tracking-[0.2em] uppercase font-bold">Fleet</span>
+                <div className="inline-block px-3 py-1 mb-4 rounded-full bg-gold-400/10 border border-gold-400/20">
+                    <span className="text-gold-400 text-[10px] tracking-[0.2em] uppercase font-bold">Our Fleet</span>
                 </div>
-                <h2 className="text-4xl md:text-5xl font-serif text-white">Our Fleet</h2>
+                <h2 className="text-4xl md:text-5xl font-serif text-white">Luxury Vehicles</h2>
             </div>
 
             {/* Replaced Grid with Carousel */}
@@ -270,15 +290,26 @@ const App: React.FC = () => {
 
                    {/* Right Side: Content */}
                    <div className="text-center lg:text-left order-2">
-                       <span className="text-gold-400 text-xs tracking-[0.2em] uppercase font-bold mb-4 block">Contact</span>
-                       <h2 className="text-4xl md:text-6xl font-serif text-white mb-6">Talk to us</h2>
-                       <p className="text-gray-400 text-lg mb-10 leading-relaxed max-w-lg mx-auto lg:mx-0">
-                            Connect with our concierge team to calculate trip costs instantly and reserve your luxury ride in minutes.
+                       <span className="text-gold-400 text-xs tracking-[0.2em] uppercase font-bold mb-4 block">24/7 Reservations</span>
+                       <h2 className="text-4xl md:text-6xl font-serif text-white mb-6">Ready When You Are</h2>
+                       <p className="text-gray-400 text-lg mb-6 leading-relaxed max-w-lg mx-auto lg:mx-0">
+                            Questions about pricing? Need a custom quote? Our team is available around the clock to help you book the perfect ride.
                        </p>
                        
-                       <a href="#book" className="inline-block px-10 py-4 bg-gold-400 text-dark-900 font-bold uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(146,132,84,0.2)]">
-                            Instant Quote
-                        </a>
+                       <div className="flex items-center gap-3 mb-8 justify-center lg:justify-start">
+                            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                            <span className="text-green-400 text-sm font-medium">Agents available now</span>
+                       </div>
+                       
+                       <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                           <a href="tel:+14158701333" className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gold-400 text-dark-900 font-bold uppercase tracking-widest text-xs hover:bg-white transition-all duration-300 shadow-[0_0_20px_rgba(146,132,84,0.2)]">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                Call Now
+                            </a>
+                           <a href="#book" className="inline-flex items-center justify-center gap-2 px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest text-xs hover:border-gold-400 hover:text-gold-400 transition-all duration-300">
+                                Get Instant Quote
+                            </a>
+                       </div>
                    </div>
 
               </div>
@@ -286,7 +317,7 @@ const App: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black pt-16 pb-8 border-t border-white/10">
+      <footer className="bg-black pt-16 pb-24 md:pb-8 border-t border-white/10">
         <div className="container mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
                  <div className="flex items-center gap-3">

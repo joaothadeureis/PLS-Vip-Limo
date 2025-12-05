@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Phone, MapPin, Star } from 'lucide-react';
+import { Menu, X, Phone, MapPin, Star, Mail } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,10 +13,22 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <>
       {/* Announcement Bar with Rating */}
-      <div className={`bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600 py-1.5 transition-all duration-300 ${isScrolled ? '-translate-y-full opacity-0 absolute top-0 w-full' : 'translate-y-0 opacity-100 relative'}`}>
+      <div className={`bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600 py-1.5 transition-all duration-300 z-40 ${isScrolled ? 'hidden' : 'relative'}`}>
         <div className="container mx-auto px-6">
           <a 
             href="https://share.google/WyRHsaMrefBXLfz8S" 
@@ -39,24 +51,32 @@ const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {/* Top Bar */}
-      <div className={`bg-dark-900 border-b border-white/5 py-2 hidden md:block transition-all duration-300 ${isScrolled ? '-translate-y-full opacity-0 absolute top-0 w-full' : 'translate-y-0 opacity-100 relative'}`}>
-        <div className="container mx-auto px-6 flex justify-between items-center text-[10px] uppercase tracking-widest text-gray-400">
-            <div className="flex items-center gap-4">
-                <span className="flex items-center gap-2"><MapPin size={10} className="text-gold-400" /> San Francisco and Surrounding Areas</span>
+      {/* Top Bar - Desktop only */}
+      <div className={`bg-dark-900 border-b border-white/5 py-2.5 hidden md:block transition-all duration-300 ${isScrolled ? 'hidden' : 'relative'}`}>
+        <div className="container mx-auto px-6 flex justify-between items-center">
+            <div className="flex items-center gap-4 text-[10px] uppercase tracking-widest text-gray-400">
+                <span className="flex items-center gap-2"><MapPin size={10} className="text-gold-400" /> Serving All Bay Area</span>
+                <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Available 24/7</span>
             </div>
             <div className="flex items-center gap-6">
-                <a href="tel:+14158701333" className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><Phone size={10} className="text-gold-400" /> +1 (415) 870-1333</a>
-                <a href="tel:+14155488535" className="flex items-center gap-2 hover:text-white transition-colors cursor-pointer"><Phone size={10} className="text-gold-400" /> +1 (415) 548-8535</a>
+                <a href="tel:+14158701333" className="flex items-center gap-2 text-gold-400 hover:text-white transition-colors">
+                  <Phone size={14} />
+                  <span className="text-sm font-semibold">(415) 870-1333</span>
+                </a>
+                <a href="tel:+14155488535" className="flex items-center gap-2 text-gray-400 hover:text-gold-400 transition-colors">
+                  <Phone size={14} />
+                  <span className="text-sm font-semibold">(415) 548-8535</span>
+                </a>
             </div>
         </div>
       </div>
 
+      {/* Main Navbar */}
       <nav 
         className={`fixed w-full z-50 transition-all duration-500 left-0 ${
           isScrolled 
-            ? 'top-0 bg-dark-900/95 backdrop-blur-md border-b border-white/10 py-4 shadow-2xl' 
-            : 'top-0 md:top-[69px] bg-transparent py-6'
+            ? 'top-0 bg-dark-900/95 backdrop-blur-md border-b border-white/10 py-3 shadow-2xl' 
+            : 'top-[30px] md:top-[69px] bg-dark-900/80 backdrop-blur-sm py-4'
         }`}
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
@@ -65,11 +85,11 @@ const Navbar: React.FC = () => {
               <img 
                 src="./pls-vip-limo-1-1.webp" 
                 alt="PLS VIP Limo" 
-                className="h-14 w-auto object-contain pb-2"
+                className="h-10 md:h-14 w-auto object-contain"
               />
           </div>
 
-          {/* Desktop Menu - Landing Page Mode (Anchors only) */}
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8">
             {['Fleet', 'Services', 'Reviews', 'About', 'Contact'].map((item) => (
               <a 
@@ -87,35 +107,110 @@ const Navbar: React.FC = () => {
 
           {/* Mobile Toggle */}
           <div className="md:hidden">
-              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white">
-                  {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white p-2">
+                  <Menu size={24} />
               </button>
           </div>
         </div>
+      </nav>
 
-        {/* Mobile Menu Overlay */}
-        {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-dark-900/95 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col gap-6 shadow-2xl">
-               {['Fleet', 'Services', 'Reviews', 'About', 'Contact'].map((item) => (
+      {/* Mobile Sidebar Overlay */}
+      <div 
+        className={`fixed inset-0 bg-black/60 z-[60] transition-opacity duration-300 md:hidden ${mobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+
+      {/* Mobile Sidebar Drawer */}
+      <div 
+        className={`fixed top-0 right-0 h-full w-[280px] bg-dark-900 z-[70] transform transition-transform duration-300 ease-out md:hidden ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+      >
+        {/* Sidebar Header */}
+        <div className="flex items-center justify-between p-5 border-b border-white/10">
+          <img 
+            src="./pls-vip-limo-1-1.webp" 
+            alt="PLS VIP Limo" 
+            className="h-8 w-auto"
+          />
+          <button onClick={() => setMobileMenuOpen(false)} className="text-white p-1">
+            <X size={24} />
+          </button>
+        </div>
+
+        {/* Sidebar Content */}
+        <div className="flex flex-col h-[calc(100%-70px)]">
+          {/* Navigation Links */}
+          <div className="flex-1 py-6 px-5">
+            {['Fleet', 'Services', 'Reviews', 'About', 'Contact'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-gray-300 hover:text-gold-400 text-center text-sm tracking-widest uppercase"
+                className="block py-3 text-gray-300 hover:text-gold-400 text-sm tracking-widest uppercase border-b border-white/5 transition-colors"
               >
                 {item}
               </a>
             ))}
+          </div>
+
+          {/* Contact Info */}
+          <div className="px-5 py-4 border-t border-white/10 bg-dark-800/50">
+            <p className="text-[10px] uppercase tracking-widest text-gray-500 mb-3">Contact Us</p>
+            
+            <a 
+              href="tel:+14158701333"
+              className="flex items-center gap-3 py-2.5 text-gold-400 font-semibold"
+            >
+              <Phone size={16} /> (415) 870-1333
+            </a>
+            <a 
+              href="tel:+14155488535"
+              className="flex items-center gap-3 py-2.5 text-white/80"
+            >
+              <Phone size={16} /> (415) 548-8535
+            </a>
+            <a 
+              href="mailto:info@plsviplimo.com"
+              className="flex items-center gap-3 py-2.5 text-white/80"
+            >
+              <Mail size={16} /> info@plsviplimo.com
+            </a>
+          </div>
+
+          {/* CTA Button */}
+          <div className="p-5 border-t border-white/10">
             <a 
               href="#book"
               onClick={() => setMobileMenuOpen(false)} 
-              className="w-full text-center py-3 bg-gold-400 text-dark-900 font-bold uppercase tracking-widest"
+              className="block w-full text-center py-3 bg-gold-400 text-dark-900 font-bold uppercase tracking-widest text-sm"
             >
               Book Now
             </a>
+            <p className="text-center text-[10px] text-gray-500 flex items-center justify-center gap-2 mt-3">
+              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+              Available 24/7
+            </p>
           </div>
-        )}
-      </nav>
+        </div>
+      </div>
+
+      {/* Mobile Sticky Phone Bar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-dark-900/95 backdrop-blur-md border-t border-gold-400/30 safe-area-pb">
+        <div className="flex">
+          <a 
+            href="tel:+14158701333" 
+            className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-gold-400 text-dark-900 font-bold text-sm"
+          >
+            <Phone size={14} />
+            <span>Call Now</span>
+          </a>
+          <a 
+            href="#book" 
+            className="flex-1 flex items-center justify-center gap-2 py-2.5 bg-dark-800 text-white font-bold text-sm border-l border-white/10"
+          >
+            <span>Book Online</span>
+          </a>
+        </div>
+      </div>
     </>
   );
 };

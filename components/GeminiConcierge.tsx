@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, Send, Headset, Phone, Mail, MessageSquare, Loader2, Check } from 'lucide-react';
 
 const ConciergeWidget: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'message' | 'call'>('message');
+  const [showTooltip, setShowTooltip] = useState(false);
+  const [hasShownTooltip, setHasShownTooltip] = useState(false);
   
   const [formData, setFormData] = useState({
     name: '',
@@ -12,6 +14,19 @@ const ConciergeWidget: React.FC = () => {
     message: ''
   });
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  // Show tooltip after 4 seconds on first visit
+  useEffect(() => {
+    if (!hasShownTooltip && !isOpen) {
+      const timer = setTimeout(() => {
+        setShowTooltip(true);
+        setHasShownTooltip(true);
+        // Auto-hide after 10 seconds
+        setTimeout(() => setShowTooltip(false), 10000);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [hasShownTooltip, isOpen]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -65,17 +80,38 @@ const ConciergeWidget: React.FC = () => {
   return (
     <>
       {/* Floating Action Button */}
-      <div className="fixed bottom-8 right-8 z-40 group">
-          {/* Tooltip */}
-          <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-dark-900 text-xs font-bold uppercase tracking-widest px-3 py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg pointer-events-none">
+      <div className="fixed bottom-20 right-4 z-40 md:bottom-8 md:right-8">
+          {/* Auto Tooltip - appears after 4s */}
+          <div className={`absolute right-full mr-4 bottom-2 transition-all duration-500 ${showTooltip && !isOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none'}`}>
+            <div className="bg-white text-dark-900 px-5 py-4 rounded-xl shadow-2xl w-[260px] relative border-l-4 border-gold-400">
+              <button 
+                onClick={() => setShowTooltip(false)}
+                className="absolute -top-2 -right-2 w-6 h-6 bg-dark-900 text-white rounded-full text-sm flex items-center justify-center hover:bg-gold-400 transition-colors"
+              >
+                ×
+              </button>
+              <p className="text-base font-bold mb-2">Need help booking? 👋</p>
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                Questions about pricing or availability? Our concierge team is here to help!
+              </p>
+              <p className="text-xs text-gold-600 font-bold">Click to chat or call us →</p>
+              {/* Arrow */}
+              <div className="absolute top-1/2 -right-2 -translate-y-1/2 w-0 h-0 border-t-8 border-b-8 border-l-8 border-transparent border-l-white"></div>
+            </div>
+          </div>
+          
+          {/* Hover Tooltip */}
+          <div className={`absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white text-dark-900 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg pointer-events-none ${showTooltip ? 'hidden' : ''}`}>
               Talk with our concierge
           </div>
           
           <button 
-            onClick={() => setIsOpen(true)}
-            className={`w-16 h-16 bg-dark-900 border border-gold-400 text-gold-400 rounded-full shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:scale-110 transition-transform duration-300 flex items-center justify-center ${isOpen ? 'hidden' : 'flex'}`}
+            onClick={() => { setIsOpen(true); setShowTooltip(false); }}
+            className={`group relative w-[72px] h-[72px] md:w-24 md:h-24 bg-gradient-to-br from-gold-400 to-gold-600 text-dark-900 rounded-full shadow-[0_0_40px_rgba(146,132,84,0.5)] hover:shadow-[0_0_60px_rgba(146,132,84,0.7)] hover:scale-105 transition-all duration-300 flex items-center justify-center ${isOpen ? 'hidden' : 'flex'}`}
           >
-            <Headset className="w-7 h-7" />
+            {/* Subtle pulse ring - slower animation */}
+            <span className="absolute inset-0 rounded-full bg-gold-400 animate-[ping_3s_ease-in-out_infinite] opacity-20"></span>
+            <Headset className="w-8 h-8 md:w-10 md:h-10 relative z-10" />
           </button>
       </div>
 
